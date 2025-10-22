@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>[PERSONALIZAR AQUI] - Página Pessoal</title>
+    <style>
+      /* =============================== */
+      /* Configuração base e variáveis   */
+      /* =============================== */
+      :root {
+        color-scheme: dark light;
+        --background-color: #1a3d7c; /* Azul confortável para leitura */
+        --text-color: #ffffff; /* Texto branco para máximo contraste */
+        --accent-color: #ffd166; /* Destaque suave para botões/links */
+        --max-width: 720px;
+        --transition-speed: 0.2s;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 24px;
+      }
+
+      main {
+        width: 100%;
+        max-width: var(--max-width);
+        display: grid;
+        gap: 32px;
+      }
+
+      header {
+        text-align: center;
+        display: grid;
+        gap: 12px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 3rem);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0;
+        font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+        line-height: 1.6;
+      }
+
+      /* =============================== */
+      /* Espaço principal para textos    */
+      /* =============================== */
+      section {
+        background-color: rgba(0, 0, 0, 0.12);
+        border-radius: 16px;
+        padding: clamp(24px, 4vw, 40px);
+        display: grid;
+        gap: 24px;
+      }
+
+      .texto-personalizado {
+        display: grid;
+        gap: 16px;
+      }
+
+      .texto-personalizado textarea {
+        width: 100%;
+        min-height: 180px;
+        border: none;
+        border-radius: 12px;
+        padding: 16px;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: var(--background-color);
+        background-color: var(--text-color);
+        resize: vertical;
+      }
+
+      .texto-personalizado textarea:focus {
+        outline: 3px solid rgba(255, 209, 102, 0.7);
+        outline-offset: 2px;
+      }
+
+      /* =============================== */
+      /* Espaço para link pessoal        */
+      /* =============================== */
+      .cta-wrapper {
+        display: grid;
+        gap: 12px;
+        justify-items: center;
+      }
+
+      .cta-wrapper p {
+        font-size: 1rem;
+        text-align: center;
+        opacity: 0.85;
+      }
+
+      .cta-botao {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 28px;
+        border-radius: 999px;
+        border: 2px solid transparent;
+        background-color: var(--accent-color);
+        color: #1f2a44;
+        font-size: 1.05rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform var(--transition-speed) ease,
+          box-shadow var(--transition-speed) ease,
+          background-color var(--transition-speed) ease;
+      }
+
+      .cta-botao:hover,
+      .cta-botao:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        background-color: #ffe29b;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 0.95rem;
+        opacity: 0.65;
+      }
+
+      /* =============================== */
+      /* Responsividade                  */
+      /* =============================== */
+      @media (max-width: 600px) {
+        body {
+          padding: 32px 16px;
+        }
+
+        section {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- Cabeçalho com título principal [PERSONALIZAR AQUI] -->
+      <header>
+        <h1>[PERSONALIZAR AQUI] Seu Nome</h1>
+        <p>
+          [PERSONALIZAR AQUI] Uma frase curta apresentando você ou seu objetivo
+          profissional.
+        </p>
+      </header>
+
+      <!-- Seção central para editar e escrever textos pessoais -->
+      <section aria-labelledby="texto-pessoal">
+        <div class="texto-personalizado">
+          <h2 id="texto-pessoal">[PERSONALIZAR AQUI] Seu texto pessoal</h2>
+          <p>
+            [PERSONALIZAR AQUI] Use este espaço para escrever uma breve
+            biografia, compartilhar ideias, metas ou qualquer informação que
+            queira destacar.
+          </p>
+          <!-- Área de edição rápida (pode ser substituída por texto fixo, se preferir) -->
+          <textarea aria-label="Campo de texto para edição pessoal">
+[PERSONALIZAR AQUI] Cole ou escreva seu conteúdo especial aqui.</textarea
+          >
+        </div>
+
+        <!-- Espaço para hyperlink ou botão de redirecionamento -->
+        <div class="cta-wrapper">
+          <p>[PERSONALIZAR AQUI] Destaque um link importante abaixo:</p>
+          <a class="cta-botao" href="[PERSONALIZAR AQUI]https://seu-link.com">
+            Visitar meu projeto
+          </a>
+        </div>
+      </section>
+
+      <!-- Rodapé simples com direitos autorais -->
+      <footer>
+        &copy; <span id="ano-atual"></span> [PERSONALIZAR AQUI] Seu nome.
+        Todos os direitos reservados.
+      </footer>
+    </main>
+
+    <script>
+      // Atualiza automaticamente o ano no rodapé
+      document.getElementById("ano-atual").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
