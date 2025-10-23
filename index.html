@@ -1,205 +1,223 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Matheus Coelho - Página Pessoal</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site em Preto</title>
     <style>
-      /* =============================== */
-      /* Configuração base e variáveis   */
-      /* =============================== */
       :root {
-        color-scheme: dark light;
-        --background-color: #1a3d7c; /* Azul confortável para leitura */
-        --text-color: #ffffff; /* Texto branco para máximo contraste */
-        --accent-color: #ffd166; /* Destaque suave para botões/links */
-        --max-width: 720px;
-        --transition-speed: 0.2s;
-        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto,
-          "Helvetica Neue", Arial, sans-serif;
+        color-scheme: dark;
       }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html,
       body {
         margin: 0;
-        padding: 0;
-        background-color: var(--background-color);
-        color: var(--text-color);
-      }
-
-      body {
         min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 48px 24px;
+        background-color: #050505;
+        color: #f5f5f5;
+        font-family: "Helvetica Neue", Arial, sans-serif;
       }
-
       main {
-        width: 100%;
-        max-width: var(--max-width);
-        display: grid;
-        gap: 32px;
+        max-width: 720px;
+        width: 90%;
+        line-height: 1.75;
+        font-size: 1.05rem;
+        letter-spacing: 0.02em;
       }
-
-      header {
-        text-align: center;
-        display: grid;
-        gap: 12px;
+      main p {
+        margin: 0 0 1.6rem;
       }
-
-      h1 {
+      ol {
+        margin: 0 0 2.2rem;
+        padding-left: 1.35rem;
+      }
+      ol li {
+        margin-bottom: 1.4rem;
+      }
+      strong {
+        font-weight: 600;
+      }
+      .cta {
+        margin-top: 2.75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1.25rem;
+      }
+      .cta p {
         margin: 0;
-        font-size: clamp(2rem, 5vw, 3rem);
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
+        font-style: italic;
+        text-align: right;
+        max-width: 28rem;
       }
-
-      p {
-        margin: 0;
-        font-size: clamp(1.05rem, 2.4vw, 1.25rem);
-        line-height: 1.6;
-      }
-
-      /* =============================== */
-      /* Espaço principal para textos    */
-      /* =============================== */
-      section {
-        background-color: rgba(0, 0, 0, 0.12);
-        border-radius: 16px;
-        padding: clamp(24px, 4vw, 40px);
-        display: grid;
-        gap: 24px;
-      }
-
-      .texto-personalizado {
-        display: grid;
-        gap: 16px;
-      }
-
-      .texto-personalizado textarea {
-        width: 100%;
-        min-height: 180px;
-        border: none;
-        border-radius: 12px;
-        padding: 16px;
-        font-size: 1rem;
-        line-height: 1.5;
-        color: var(--background-color);
-        background-color: var(--text-color);
-        resize: vertical;
-      }
-
-      .texto-personalizado textarea:focus {
-        outline: 3px solid rgba(255, 209, 102, 0.7);
-        outline-offset: 2px;
-      }
-
-      /* =============================== */
-      /* Espaço para link pessoal        */
-      /* =============================== */
-      .cta-wrapper {
-        display: grid;
-        gap: 12px;
-        justify-items: center;
-      }
-
-      .cta-wrapper p {
-        font-size: 1rem;
-        text-align: center;
-        opacity: 0.85;
-      }
-
-      .cta-botao {
+      .cta a {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 14px 28px;
-        border-radius: 999px;
-        border: 2px solid transparent;
-        background-color: var(--accent-color);
-        color: #1f2a44;
-        font-size: 1.05rem;
-        font-weight: 600;
+        padding: 0.9rem 1.9rem;
+        background-color: #f5f5f5;
+        color: #050505;
         text-decoration: none;
-        transition: transform var(--transition-speed) ease,
-          box-shadow var(--transition-speed) ease,
-          background-color var(--transition-speed) ease;
+        font-weight: 600;
+        border-radius: 999px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
-
-      .cta-botao:hover,
-      .cta-botao:focus {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-        background-color: #ffe29b;
+      .cta a:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(245, 245, 245, 0.18);
       }
-
-      footer {
-        text-align: center;
-        font-size: 0.95rem;
-        opacity: 0.65;
-      }
-
-      /* =============================== */
-      /* Responsividade                  */
-      /* =============================== */
-      @media (max-width: 600px) {
-        body {
-          padding: 32px 16px;
-        }
-
-        section {
-          padding: 24px;
-        }
+      .cta a:focus-visible {
+        outline: 3px solid rgba(245, 245, 245, 0.6);
+        outline-offset: 4px;
       }
     </style>
   </head>
   <body>
     <main>
-      <!-- Cabeçalho com título principal [PERSONALIZAR AQUI] -->
-      <header>
-        <h1>Matheus Coelho</h1>
+      <p>"Por Que Homens Inteligentes Continuam Presos em Vidas Medíocres?"</p>
+      <p>
+        A resposta não está em mais produtividade, mais disciplina ou mais
+        sacrifício. Está em descobrir em qual camada da personalidade você travou
+        — e o que fazer para sair dela.
+      </p>
+      <p>Se você é como a maioria dos homens que me procuram...</p>
+      <p>
+        Você acordou da adolescência e percebeu que está vivendo a vida de outra
+        pessoa.
+      </p>
+      <p>
+        Você trabalha. Cumpre obrigações. Paga contas. Mantém as aparências.
+        Mas por dentro?
+      </p>
+      <p>
+        Por dentro você sabe que está desperdiçando seus melhores anos em uma
+        existência que não escolheu.
+      </p>
+      <p>Você não está deprimido. Você está entediado.</p>
+      <p>
+        Entediado com o trabalho que não gera propósito. Entediado com
+        relacionamentos superficiais. Entediado consigo mesmo.
+      </p>
+      <p>E o pior: você já tentou de tudo.</p>
+      <p>
+        Leu os livros de autoajuda. Assistiu os podcasts motivacionais. Montou a
+        rotina perfeita das 5 da manhã.
+      </p>
+      <p>Mas nada muda de verdade.</p>
+      <p>Porque ninguém te disse a verdade incômoda:</p>
+      <p>Você não precisa de mais informação. Você precisa amadurecer.</p>
+      <p><strong>Você está preso se...</strong></p>
+      <ol>
+        <li>
+          <strong>Você precisa de validação externa para se sentir valioso</strong>
+          <br />
+          Todo elogio do chefe te enche de energia. Toda crítica te destrói por
+          dias. Você confunde seu valor com a opinião alheia — e isso te
+          transforma em refém emocional de pessoas que nem se importam com você.
+        </li>
+        <li>
+          <strong>Você tem raiva, mas não sabe contra o quê</strong>
+          <br />
+          Aquela irritação constante. Aquela sensação de estar sendo injustiçado.
+          Você quer "mostrar pra eles" — mas não sabe quem são "eles", nem o que
+          quer provar. Sua força vaza em ressentimento inútil.
+        </li>
+        <li>
+          <strong>Você trabalha muito, mas nunca sai do lugar</strong>
+          <br />
+          Você se mata de trabalhar. Cumpre prazos. Entrega resultados. Mas no fim
+          do mês olha a conta bancária e se pergunta: "Era só isso?" Você
+          confundiu movimento com progresso.
+        </li>
+        <li>
+          <strong>Você conquistou sucesso, mas ainda se sente vazio</strong>
+          <br />
+          Tem o carro. A casa. O cargo. Mas quando está sozinho, bate aquela
+          pergunta maldita: "É só isso? Eu me matei por isso?" O sucesso que você
+          tem não preenche o homem que você é.
+        </li>
+        <li>
+          <strong>Você não sabe qual é seu papel no mundo</strong>
+          <br />
+          Você é pai? Profissional? Líder? Amigo? Você tenta ser tudo para todos e
+          acaba não sendo nada para ninguém. Sua vida é uma colcha de retalhos sem
+          desenho.
+        </li>
+        <li>
+          <strong>Você tem medo de ter desperdiçado sua vida</strong>
+          <br />
+          Você olha para trás e não reconhece o homem que foi. Você está no meio
+          da vida e percebe: você ainda não começou a viver de verdade.
+        </li>
+        <li>
+          <strong>Você sabe o que deveria fazer, mas não faz</strong>
+          <br />
+          Você conhece a verdade. Sabe o que é certo. Mas na hora H, trai seus
+          próprios princípios. Você dorme todo dia com a consciência pesada de
+          quem sabe que poderia ser mais — mas escolhe ser menos.
+        </li>
+      </ol>
+      <p>A verdade que ninguém te contou:</p>
+      <p>Essas não são "crises existenciais".</p>
+      <p>São sintomas precisos de bloqueios em camadas específicas da sua personalidade.</p>
+      <p>E cada bloqueio exige uma solução diferente.</p>
+      <p>Por isso você já tentou de tudo e nada funcionou.</p>
+      <p>Você está aplicando remédio para dor de cabeça quando o problema está no estômago.</p>
+      <p>A boa notícia?</p>
+      <p>Existe um mapa. Um diagnóstico preciso. Um caminho.</p>
+      <p>
+        Eu trabalho com a Teoria das 12 Camadas da Personalidade — um sistema que
+        identifica exatamente onde você travou e o que precisa fazer para
+        amadurecer de verdade.
+      </p>
+      <p>No processo comigo, você vai:</p>
+      <p><strong>Primeiro: Identificar com precisão cirúrgica em qual camada você está travado.</strong></p>
+      <p>
+        Não é coaching genérico. Não é terapia de anos. É um diagnóstico objetivo
+        baseado nas suas dores reais, suas motivações verdadeiras e seus padrões
+        de sofrimento.
+      </p>
+      <p><strong>Segundo: Entender por que você age como age — e por que isso não funciona mais.</strong></p>
+      <p>
+        Você vai ver com clareza brutal onde está perdendo energia, onde está
+        buscando satisfação nos lugares errados, e quais necessidades infantis
+        ainda comandam sua vida adulta.
+      </p>
+      <p><strong>Terceiro: Receber um plano específico para a próxima camada.</strong></p>
+      <p>
+        Não vou te dar uma lista de hábitos genéricos. Vou te mostrar exatamente o
+        que você precisa enfrentar, conquistar e abandonar para amadurecer de
+        verdade.
+      </p>
+      <p>Você não tem 10 anos para desperdiçar.</p>
+      <p>A cada ano que passa preso na mesma camada, mais difícil fica sair.</p>
+      <p>
+        Seus padrões se calcificam. Suas justificativas ficam mais sofisticadas.
+        Sua tolerância à mediocridade aumenta.
+      </p>
+      <p>
+        Você vai acordar aos 50 anos e perceber que gastou 15 anos "pensando" em
+        mudar.
+      </p>
+      <p>Ou você pode começar hoje.</p>
+      <p>Se isso faz sentido para você...</p>
+      <p>Se você reconheceu suas dores neste texto.</p>
+      <p>Se está cansado de soluções superficiais.</p>
+      <p>Se quer um diagnóstico honesto e um caminho concreto...</p>
+      <p>Entre em contato comigo.</p>
+      <p>
+        Não é para todo mundo. Só para homens que estão prontos para confrontar a
+        verdade sobre si mesmos.
+      </p>
+      <p>Sem enrolação. Sem promessas vazias. Só trabalho real para quem quer amadurecer de verdade.</p>
+      <div class="cta">
         <p>
-          Uma Vida bem vivida é uma história bem contada
+          "A maioria dos homens morre aos 25 e é enterrada aos 75. Você vai ser
+          exceção ou estatística?"
         </p>
-      </header>
-
-      <!-- Seção central para editar e escrever textos pessoais -->
-      <section aria-labelledby="texto-pessoal">
-        <div class="texto-personalizado">
-          <h2 id="texto-pessoal">[PERSONALIZAR AQUI] Seu texto pessoal</h2>
-          <p>
-            [PERSONALIZAR AQUI] Use este espaço para escrever uma breve
-            biografia, compartilhar ideias, metas ou qualquer informação que
-            queira destacar.
-          </p>
-          <!-- Área de edição rápida (pode ser substituída por texto fixo, se preferir) -->
-          <textarea aria-label="Campo de texto para edição pessoal">
-[PERSONALIZAR AQUI] Cole ou escreva seu conteúdo especial aqui.</textarea
-          >
-        </div>
-
-        <!-- Espaço para hyperlink ou botão de redirecionamento -->
-        <div class="cta-wrapper">
-          <a class="cta-botao" href="[PERSONALIZAR AQUI]https://seu-link.com">
-            Saiba mais
-          </a>
-        </div>
-      </section>
-
-      <!-- Rodapé simples com direitos autorais -->
-      <footer>
-        &copy; <span id="ano-atual"></span> Matheus Coelho.
-      </footer>
+        <a href="#">QUERO O DIAGNÓSTICO</a>
+      </div>
     </main>
-
-    <script>
-      // Atualiza automaticamente o ano no rodapé
-      document.getElementById("ano-atual").textContent = new Date().getFullYear();
-    </script>
   </body>
 </html>
