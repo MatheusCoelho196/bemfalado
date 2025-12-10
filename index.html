@@ -1,250 +1,226 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Por Que Homens Inteligentes...</title>
-
-  <!-- Tipografia (Google Fonts) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sua Empresa de Aluguel de Ferramentas</title>
+  <meta name="description" content="Aluguel de ferramentas com entrega rápida e preço justo." />
 
   <style>
-    :root{
-      --bg: #F8FAFC;
-      --ink: #0F172A;
-      --muted: #475569;
-      --accent: #2563EB;
-      --ink-contrast: #0B1220;
-      --radius: 12px;
-      --space-1: .5rem;
-      --space-2: .75rem;
-      --space-3: 1rem;
-      --space-4: 1.5rem;
-      --space-5: 2rem;
-      --space-6: 3rem;
-      --measure: 68ch;
-      --shadow: 0 8px 28px rgba(2,6,23,.08);
+    :root {
+      --bg: #020617;
+      --card: #020617ee;
+      --accent: #22c55e;
+      --accent-dark: #16a34a;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
     }
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body{
+    * {
       margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      line-height: 1.6;
-      font-size: 16px;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .wrap{
-      max-width: 1100px;
-      padding-inline: var(--space-4);
-      margin-inline: auto;
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, #1f2937 0, transparent 55%),
+        radial-gradient(circle at bottom, #0f172a 0, #020617 60%);
     }
 
-    header.hero{
-      padding-block: clamp(2.5rem, 6vw, 5rem);
-      text-align: left;
+    .card {
+      width: 100%;
+      max-width: 480px;
+      background: var(--card);
+      border-radius: 24px;
+      padding: 28px 22px 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+      backdrop-filter: blur(16px);
     }
 
-    .prose{
-      max-width: var(--measure);
-      margin-inline: auto;
-    }
-
-    h1{
-      font-family: "Merriweather", Georgia, "Times New Roman", serif;
-      font-weight: 700;
-      color: var(--ink-contrast);
-      font-size: clamp(2rem, 4.8vw, 2.75rem);
-      line-height: 1.2;
-      letter-spacing: -0.015em;
-      margin: 0 0 var(--space-2) 0;
-    }
-
-    .subheadline{
-      font-size: clamp(1.05rem, 2.3vw, 1.25rem);
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
       color: var(--muted);
-      font-weight: 600;
-      margin: 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      margin-bottom: 14px;
     }
 
-    hr.div{
-      border: 0;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(15,23,42,.18), transparent);
-      margin: var(--space-5) auto;
-      max-width: var(--measure);
-    }
-
-    h2, h3{
-      color: var(--ink-contrast);
-      font-weight: 800;
-      margin: var(--space-5) 0 var(--space-2) 0;
-      letter-spacing: -0.01em;
-    }
-    h2{ font-size: clamp(1.25rem, 3vw, 1.5rem); }
-    h3{ font-size: clamp(1.1rem, 2.4vw, 1.25rem); }
-
-    p{
-      margin: 0 0 var(--space-3) 0;
-      font-size: 1.05rem;
-    }
-
-    .lead{ font-weight: 600; }
-
-    ul, ol{
-      padding-left: 1.25rem;
-      margin: 0 0 var(--space-3) 0;
-    }
-    li{ margin-bottom: .6rem; }
-
-    .callout{
-      background: white;
-      border: 1px solid #E2E8F0;
-      border-radius: var(--radius);
-      padding: var(--space-4);
-      box-shadow: var(--shadow);
-      margin: var(--space-5) 0;
-    }
-
-    a{
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    a:hover{ text-decoration: underline; }
-
-    .cta{
-      display: inline-block;
-      margin-top: var(--space-4);
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
       background: var(--accent);
-      color: #fff;
-      font-weight: 800;
-      padding: .9rem 1.25rem;
-      border-radius: calc(var(--radius) - 4px);
-      box-shadow: 0 6px 18px rgba(37,99,235,.25);
-      transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
     }
-    .cta:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(37,99,235,.28);
-      text-decoration: none;
-      filter: brightness(1.03);
-    }
-    .cta:active{ transform: translateY(0); }
 
-    .final-line{
-      font-style: italic;
+    h1 {
+      font-size: 24px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      color: var(--accent);
       font-weight: 600;
-      color: var(--ink-contrast);
-      margin-top: var(--space-5);
     }
 
-    main{ padding-bottom: clamp(3rem, 8vw, 6rem); }
+    .subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
 
-    :focus-visible{
-      outline: 3px solid rgba(37,99,235,.6);
-      outline-offset: 2px;
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+    }
+
+    .info-box {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 10px 10px;
+      border-radius: 16px;
+      border: 1px dashed rgba(55, 65, 81, 0.9);
+      margin-bottom: 18px;
+    }
+
+    .info-box strong {
+      color: var(--text);
+    }
+
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      background: var(--accent);
+      color: #022c22;
+      margin-bottom: 10px;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+      box-shadow: 0 18px 35px rgba(34, 197, 94, 0.3);
+    }
+
+    .whatsapp-btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 22px 45px rgba(34, 197, 94, 0.35);
+    }
+
+    .whatsapp-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 12px 25px rgba(34, 197, 94, 0.25);
+    }
+
+    .whatsapp-icon {
+      width: 20px;
+      height: 20px;
       border-radius: 6px;
+      border: 1px solid rgba(15, 23, 42, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      background: rgba(15, 23, 42, 0.6);
+    }
+
+    .small-text {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .small-text span {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    @media (min-width: 640px) {
+      h1 {
+        font-size: 28px;
+      }
+      .card {
+        padding: 32px 26px 26px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="hero prose">
-      <h1>Por Que Homens Inteligentes Continuam Presos em Vidas Medíocres?</h1>
-      <p class="subheadline">
-        A resposta não está em mais produtividade, mais disciplina ou mais sacrifício. Está em descobrir em qual camada da personalidade você travou — e o que fazer para sair dela.
-      </p>
-    </header>
-    <main class="prose" role="main">
-      <section aria-labelledby="sec-dores">
-        <h2 id="sec-dores">O que te aflige?</h2>
-        <p>Se você é como a maioria dos homens que me procuram...</p>
-        <p class="lead"><strong>Você acordou aos 35 anos e percebeu que está vivendo a vida de outra pessoa.</strong></p>
-        <p>Você trabalha. Cumpre obrigações. Paga contas. Mantém as aparências.</p>
-        <p><strong>Mas por dentro?</strong></p>
-        <p>Por dentro você sabe que está desperdiçando seus melhores anos em uma existência que não escolheu.</p>
-        <p><strong>Você não está deprimido. Você está entediado.</strong></p>
-        <p>Entediado com o trabalho que não gera propósito. Entediado com relacionamentos superficiais. Entediado consigo mesmo.</p>
-        <p>E o pior: você já tentou de tudo. Leu os livros de autoajuda. Assistiu os podcasts motivacionais. Montou a rotina perfeita das 5 da manhã.</p>
-        <p><strong>Mas nada muda de verdade.</strong></p>
-        <p>Porque ninguém te disse a verdade incômoda: <strong>Você não precisa de mais informação. Você precisa amadurecer.</strong></p>
-      </section>
+  <main class="card">
+    <div class="badge">
+      <span class="dot"></span>
+      <!-- TROCAR PELO NOME DA SUA CIDADE -->
+      Entrega rápida em até 24h em <strong>&nbsp;sua região</strong>
+    </div>
 
-      <hr class="div" />
+    <!-- TROCAR PELO NOME DA EMPRESA -->
+    <h1>Aluguel de Ferramentas <span class="highlight">Profissional</span></h1>
 
-      <section aria-labelledby="sec-identificacao">
-        <h2 id="sec-identificacao">As 7 Dores Reais</h2>
-        <p><strong>Você está preso se…</strong></p>
-        <ol>
-          <li>
-            <strong>Você precisa de validação externa para se sentir valioso</strong><br />
-          </li>
-          <li>
-            <strong>Você tem raiva, mas não sabe contra o quê</strong><br />
-          </li>
-          <li>
-            <strong>Você trabalha muito, mas nunca sai do lugar</strong><br />
-          </li>
-          <li>
-            <strong>Você conquistou sucesso, mas ainda se sente vazio</strong><br />
-          </li>
-          <li>
-            <strong>Você não sabe qual é seu papel no mundo</strong><br />
-          </li>
-          <li>
-            <strong>Você tem medo de ter desperdiçado sua vida</strong><br />
-          </li>
-          <li>
-            <strong>Você sabe o que deveria fazer, mas não faz</strong><br />
-          </li>
-        </ol>
-      </section>
+    <!-- TEXTO CURTO SOBRE O SERVIÇO -->
+    <p class="subtitle">
+      Tudo que você precisa para obra, reforma e manutenção, sem gastar comprando ferramenta cara.
+    </p>
 
-      <hr class="div" />
+    <div class="pill-list">
+      <!-- TROCAR PELO SEU FOCO -->
+      <span class="pill">Martelete, furadeira, lixadeira</span>
+      <span class="pill">Aluguel diário / semanal</span>
+      <span class="pill">Entrega e retirada no local</span>
+    </div>
 
-      <section aria-labelledby="sec-revelacao">
+    <div class="info-box">
+      <!-- TROCAR PELO SEU DIFERENCIAL -->
+      <strong>Como funciona:</strong> você chama no WhatsApp, informa o que precisa e a data. Nós respondemos com
+      orçamento e horário de entrega.
+    </div>
 
-        <p><strong>A verdade que ninguém te contou:</strong></p>
-        <p>Essas não são “crises existenciais”. São sintomas precisos de bloqueios em camadas específicas da sua personalidade. E cada bloqueio exige uma solução diferente.</p>
-        <p>Por isso você já tentou de tudo e nada funcionou. Você estava aplicando remédio para dor de cabeça quando o problema era no estômago.</p>
-        <div class="callout" role="note" aria-label="Boa notícia">
-          <p><strong>A boa notícia?</strong> Existe um mapa. Um diagnóstico preciso. Um caminho.</p>
-          <p>Eu trabalho com a <strong>Teoria das 12 Camadas da Personalidade</strong> — um sistema que identifica exatamente onde você travou e o que precisa fazer para amadurecer de verdade.</p>
-        </div>
-      </section>
+    <!-- BOTÃO WHATSAPP -->
+    <!-- TROCAR O LINK ABAIXO PELO SEU NÚMERO -->
+    <a
+      class="whatsapp-btn"
+      href="https://wa.me/5599999999999?text=Ol%C3%A1%2C+quero+alugar+ferramentas+para+minha+obra."
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="whatsapp-icon">☎</div>
+      <span>Chamar no WhatsApp</span>
+    </a>
 
-      <section aria-labelledby="sec-solucao">
-        <h2 id="sec-solucao">O que é necessário?</h2>
-        <h3>Primeiro: diagnóstico preciso</h3>
-        <p>Identificar com precisão cirúrgica em qual camada você está travado. Não é coaching genérico. Não é terapia de anos. É um diagnóstico objetivo baseado nas suas dores reais, motivações verdadeiras e padrões de sofrimento.</p>
-        <h3>Segundo: clareza sobre seus padrões</h3>
-        <p>Entender por que você age como age — e por que isso não funciona mais. Ver com clareza brutal onde está perdendo energia, onde busca satisfação nos lugares errados e quais necessidades infantis ainda comandam sua vida adulta.</p>
-        <h3>Terceiro: plano específico para a próxima camada</h3>
-        <p>Sem lista de hábitos genéricos. Um roteiro claro do que enfrentar, conquistar e abandonar para amadurecer de verdade.</p>
-      </section>
-
-      <section aria-labelledby="sec-urgencia">
-        <h2 id="sec-urgencia">Qual a sua prioridade?</h2>
-        <p><strong>Você não tem 10 anos para desperdiçar.</strong> A cada ano preso na mesma camada, mais difícil fica sair. Padrões se calcificam, justificativas ficam sofisticadas, e a tolerância à mediocridade aumenta.</p>
-        <p>Você pode acordar aos 50 e perceber que gastou 15 anos “pensando” em mudar — ou pode começar hoje.</p>
-      </section>
-
-      <section aria-labelledby="sec-fechamento">
-        
-        <p>Se isso faz sentido para você… se reconheceu suas dores neste texto… se está cansado de soluções superficiais e quer um diagnóstico honesto com um caminho concreto… <strong>entre em contato comigo.</strong></p>
-        <p>Não é para todo mundo. É para quem está pronto para confrontar a verdade sobre si mesmo. Sem enrolação. Sem promessas vazias. <strong>Só trabalho real para quem quer amadurecer de verdade.</strong></p>
-
-        <p class="final-line">“A maioria dos homens morre aos 25 e é enterrada aos 75. Você vai ser exceção ou estatística?”</p>
-
-        <a class="cta" href="https://wa.me/message/MEGTWNGI6XBJA1" aria-label="Quero o diagnóstico agora">
-          QUERO O DIAGNÓSTICO
-        </a>
-      </section>
-    </main>
-  </div>
+    <p class="small-text">
+      Atendimento de <span>segunda a sábado</span>.  
+      Resposta em poucos minutos (horário comercial).
+    </p>
+  </main>
 </body>
 </html>
