@@ -1,0 +1,41 @@
+{
+  "name": "Terapeuta IA - Apoio Emocional",
+  "short_name": "Terapeuta IA",
+  "description": "Converse com um terapeuta por IA treinado em Terapia Cognitivo-Comportamental",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4285F4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "lifestyle", "medical"],
+  "shortcuts": [
+    {
+      "name": "Iniciar Chat",
+      "short_name": "Chat",
+      "description": "Comece uma nova conversa",
+      "url": "/chat",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Diário",
+      "short_name": "Diário",
+      "description": "Registrar humor",
+      "url": "/diario",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
